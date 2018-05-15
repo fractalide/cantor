@@ -1,0 +1,3 @@
+== Fractalide Cardano Wallet
+
+Cardano Wallet implementation in Racket, using the Fractalide Flow-Based Programming scheduler
