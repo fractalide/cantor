@@ -3,13 +3,14 @@
 , src ? builtins.filterSource
   (path: type: type != "symlink" || null == builtins.match "result.*" (baseNameOf path)) ./..
 , catalog ? ./catalog.rktd
-, racket2nix ? import (fetchFromGitHub {
+, racket2nix-src ? fetchFromGitHub {
     owner  = "fractalide";
     repo   = "racket2nix";
-    rev    = "622cb6c52fe59b82dea88ec75a2d5d2a98e408b6";
-    sha256 = "1qvfrab24zsm1ygnqcin9vjqv63a0swqiwdr3im8f2v2kciklwkx";
-  }) { inherit racket; }
-, build-racket ? import "${racket2nix}/build-racket.nix"
+    rev    = "520eab8ed0e362658001319ff5b7979d4b3d9bf8";
+    sha256 = "1axwhcmrs10ga7lmbyz96j23546bn125ijan71wf4fy30pnkxx7a";
+  }
+, racket2nix ? import racket2nix-src { inherit racket; }
+, build-racket ? import "${racket2nix-src}/build-racket.nix"
 , racket ? pkgs.racket-minimal
 }:
 
