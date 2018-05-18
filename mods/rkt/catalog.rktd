@@ -41,6 +41,18 @@
               "https://download.racket-lang.org/releases/6.12/pkgs/wxme-lib.zip")
              (tags . ())
              (author . "mflatt@racket-lang.org")))
+      ("cardano-wallet"
+       .
+       #hash((dependencies . ("base" "fvm"))
+             (description
+              .
+              "Cardano Wallet implementation in Racket, using the Fractalide Flow-Based Programming scheduler")
+             (modules . ((lib "cardano-wallet/main.rkt")))
+             (name . "cardano-wallet")
+             (checksum . "")
+             (source . "./cardano-wallet")
+             (tags . ())
+             (author . "claes.wallin@greatsinodevelopment.com")))
       ("net-cookies-lib"
        .
        #hash((dependencies . ("srfi-lite-lib" "base"))
@@ -201,6 +213,18 @@
               "https://download.racket-lang.org/releases/6.12/pkgs/class-iop-lib.zip")
              (tags . ())
              (author . "ryanc@racket-lang.org")))
+      ("fvm"
+       .
+       #hash((dependencies . ("base" "fractalide"))
+             (description
+              .
+              "Convenience layer for setting up the rkt-fbp core")
+             (modules . ((lib "fvm/setup.rkt")))
+             (name . "fvm")
+             (checksum . "")
+             (source . "./fvm")
+             (tags . ())
+             (author . "claes.wallin@greatsinodevelopment.com")))
       ("gui-lib"
        .
        #hash((dependencies

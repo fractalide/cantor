@@ -5,4 +5,10 @@
               (name . "fractalide")
               (checksum . "7eb999e1791e3c527ca3c989b6fae49887ef0529")
               (source . "https://github.com/fractalide/fractalide")))
+("cardano-wallet" .
+#hash((author . "claes.wallin@greatsinodevelopment.com") (checksum . "") (dependencies . ("base" "fvm")) (description . "Cardano Wallet implementation in Racket, using the Fractalide Flow-Based Programming scheduler") (modules . ((lib "cardano-wallet/main.rkt"))) (name . "cardano-wallet") (source . "./cardano-wallet") (tags . ()))
+)
+("fvm" .
+#hash((author . "claes.wallin@greatsinodevelopment.com") (checksum . "") (dependencies . ("base" "fractalide")) (description . "Convenience layer for setting up the rkt-fbp core") (modules . ((lib "fvm/setup.rkt"))) (name . "fvm") (source . "./fvm") (tags . ()))
+)
 )
