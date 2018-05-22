@@ -11,7 +11,7 @@
   (setup-fvm sched)
   (sched (msg-mesg "sched" "acc" (make-scheduler #f)))
   (sched (msg-mesg "halt" "in" #f))
-  (define path 'fractalide/modules/rkt/rkt-fbp/agents/test/main)
+  (define path (fbp-agents-string->symbol "test/main"))
   (define a-graph (graph:make-graph (graph:node "main" path)))
   (sched (msg-mesg "fvm" "in" (cons 'add a-graph)))
   (sched (msg-mesg "fvm" "in" (cons 'stop #t)))
