@@ -1,7 +1,16 @@
 { pkgs ? import ../../nixpkgs.nix {}
 , fetchFromGitHub ? pkgs.fetchFromGitHub
-, src ? builtins.filterSource
-  (path: type: type != "symlink" || null == builtins.match "result.*" (baseNameOf path)) ./..
+, src ? (builtins.filterSource
+    (path: type: let
+      basePath = baseNameOf path;
+      exclusions = [
+        (type == "symlink" && builtins.isList (builtins.match "result.*" basePath))
+        (type == "directory" && basePath == "compiled")
+      ]; 
+    in
+      !(builtins.any (x: x) exclusions)
+    )
+  ./..)
 , catalog ? ./catalog.rktd
 , racket2nix-src ? fetchFromGitHub {
     owner  = "fractalide";
