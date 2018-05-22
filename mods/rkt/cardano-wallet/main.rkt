@@ -11,7 +11,7 @@
   (setup-fvm sched)
   (sched (msg-iip "sched" "acc" (make-scheduler #f)))
   (sched (msg-iip "halt" "in" #f))
-  (define path "test/main")
+  (define path (fbp-agents-lookup "test/main.rkt"))
   (define a-graph (graph:make-graph (graph:node "main" path)))
   (sched (msg-iip "fvm" "in" (cons 'add a-graph)))
   (sched (msg-iip "fvm" "in" (cons 'stop #t)))
