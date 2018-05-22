@@ -5,21 +5,21 @@
          fractalide/modules/rkt/rkt-fbp/agent
          (prefix-in graph: fractalide/modules/rkt/rkt-fbp/graph))
 
-(provide setup-fvm fbp-agents-lookup)
+(provide setup-fvm fbp-agents-string->symbol)
 
-(define (fbp-agents-lookup agent-relative-path)
-  (collection-file-path agent-relative-path
-                        "fractalide" "modules" "rkt" "rkt-fbp" "agents"))
+(define (fbp-agents-string->symbol agent-relative-path)
+  (string->symbol (string-append "fractalide/modules/rkt/rkt-fbp/agents/"
+                                 agent-relative-path)))
 
 (define (setup-fvm sched)
-  (for ([name+agent '(("sched" "fvm/scheduler.rkt")
-                      ("load-graph" "fvm/load-graph.rkt")
-                      ("get-graph" "fvm/get-graph.rkt")
-                      ("get-path" "fvm/get-path.rkt")
-                      ("fvm" "fvm/fvm.rkt")
-                      ("halt" "halter.rkt"))])
+  (for ([name+agent '(("sched" "fvm/scheduler")
+                      ("load-graph" "fvm/load-graph")
+                      ("get-graph" "fvm/get-graph")
+                      ("get-path" "fvm/get-path")
+                      ("fvm" "fvm/fvm")
+                      ("halt" "halter"))])
     (match-define (list name agent) name+agent)
-    (sched (msg-add-agent name (fbp-agents-lookup agent))))
+    (sched (msg-add-agent name (fbp-agents-string->symbol agent))))
   (sched (msg-connect "fvm" "sched" "sched" "in"))
   (sched (msg-connect "fvm" "flat" "load-graph" "in"))
   (sched (msg-connect "fvm" "halt" "halt" "in"))
