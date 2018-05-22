@@ -440,12 +440,12 @@
        .
        #hash((nix-sha256
               .
-              "0bnn7x4zhpcd0wqhky1jccgwdqw1mnrxmh2s0l46nz45nxzqwyxm")
+              "15pazyv4w7d4f2fjh5sg3762d0ip5g9nd5b2nx0g53cc2mgrs0fv")
              (dependencies
               .
               ("base" "gui-lib" "typed-map-lib" "typed-racket-more"))
              (name . "fractalide")
-             (checksum . "1da5b3022aca31785d39e063c37367834075c444")
+             (checksum . "bbc499e79b076cf482338f587097a91244b69958")
              (source . "https://github.com/fractalide/fractalide")))
       ("draw-lib"
        .
