@@ -1,0 +1,6 @@
+language: nix
+os:
+ - linux
+ - osx
+script:
+ - ./support/utils/nix-build-travis-fold.sh
