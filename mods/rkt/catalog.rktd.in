@@ -3,7 +3,7 @@
         .
         #hash((dependencies .  ("base" "gui-lib" "typed-map-lib" "typed-racket-more"))
               (name . "fractalide")
-              (checksum . "7eb999e1791e3c527ca3c989b6fae49887ef0529")
+              (checksum . "1da5b3022aca31785d39e063c37367834075c444")
               (source . "https://github.com/fractalide/fractalide")))
 ("cardano-wallet" .
 #hash((author . "claes.wallin@greatsinodevelopment.com") (checksum . "") (dependencies . ("base" "fvm")) (description . "Cardano Wallet implementation in Racket, using the Fractalide Flow-Based Programming scheduler") (modules . ((lib "cardano-wallet/main.rkt"))) (name . "cardano-wallet") (source . "./cardano-wallet") (tags . ()))
