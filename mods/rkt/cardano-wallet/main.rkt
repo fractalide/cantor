@@ -1,8 +1,10 @@
 #lang racket/base
 
 (require fvm/setup)
-(require fractalide/modules/rks/rkt-fbp/scheduler)
+(require fractalide/modules/rkt/rkt-fbp/agent)
 (require fractalide/modules/rkt/rkt-fbp/def)
+(require fractalide/modules/rkt/rkt-fbp/scheduler)
+(require (prefix-in graph: fractalide/modules/rkt/rkt-fbp/graph))
 
 (module+ main
   (define sched (make-scheduler #f))
