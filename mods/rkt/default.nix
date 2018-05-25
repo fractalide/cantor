@@ -15,8 +15,8 @@
 , racket2nix-src ? fetchFromGitHub {
     owner  = "fractalide";
     repo   = "racket2nix";
-    rev    = "520eab8ed0e362658001319ff5b7979d4b3d9bf8";
-    sha256 = "1axwhcmrs10ga7lmbyz96j23546bn125ijan71wf4fy30pnkxx7a";
+    rev = "f322df56de6581f5c3cf70994b6d52298ba8a9e7";
+    sha256 = "1nijpr4npszk1nia06gzzd5b1mvmkrl0wzk9paay3lhk66xyp419";
   }
 , racket2nix ? import racket2nix-src { inherit racket; }
 , build-racket ? import "${racket2nix-src}/build-racket.nix"
