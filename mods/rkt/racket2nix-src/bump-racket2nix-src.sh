@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash -p bash findutils gawk git
+#! nix-shell -i bash -p bash findutils gawk git nix-prefetch-git
 
 set -e
 set -u
@@ -21,7 +21,7 @@ fi
 if (( $# == 1 )); then
   rev=$1
 else
-  rev=$(git ls-remote github:$owner/$repo |
+  rev=$(git ls-remote https://github.com/$owner/$repo |
           awk "/$branch/"' { print $1 }')
 fi
 
