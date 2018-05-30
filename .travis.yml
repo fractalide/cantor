@@ -3,4 +3,5 @@ os:
  - linux
  - osx
 script:
- - ./support/utils/nix-build-travis-fold.sh
+ - sudo env NIX_PATH=$NIX_PATH $(which nix-shell) ./support/utils/setup-hydra.fractalide.com.sh
+ - ./support/utils/nix-build-travis-fold.sh -I cardano-wallet=$PWD release.nix
