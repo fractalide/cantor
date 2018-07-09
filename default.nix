@@ -2,7 +2,7 @@
 
 let
 attrs = {
-  cardano-wallet = import mods/rkt args;
+  cardano-wallet = import modules/rkt args;
 };
 in
 attrs // attrs.cardano-wallet
