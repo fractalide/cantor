@@ -3,8 +3,8 @@
 }:
 
 {
-  cardano-wallet = import <cardano-wallet> {};
-  cardano-wallet-nixpkgs-unstable = pkgs.callPackage <cardano-wallet> {};
+  cantor = import <cantor> {};
+  cantor-nixpkgs-unstable = pkgs.callPackage <cantor> {};
 } // pkgs.lib.optionalAttrs isTravis {
-  travisOrder = [ "cardano-wallet" ];
+  travisOrder = [ "cantor" ];
 }
