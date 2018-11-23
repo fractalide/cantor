@@ -2,7 +2,7 @@
 
 let
 attrs = {
-  cardano-wallet = import modules/rkt args;
+  cantor = import modules/rkt args;
 };
 in
-attrs // attrs.cardano-wallet
+attrs // attrs.cantor
